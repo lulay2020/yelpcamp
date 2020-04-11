@@ -1,0 +1,112 @@
+:root {
+  --linearGradient: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+}
+body{
+	background-color: #000;
+}
+
+#landing-header{
+	z-index: 1;
+	position: relative;
+	text-align: center;
+	padding-top: 35vh;
+}
+
+#landing-header h1{
+	color: #fff;
+	font-size: 3.4rem;
+	padding: 1.2rem;
+	text-shadow: 0px 4px 3px rgba(0.0.0.0,4),
+                 0px 8px 13px rgba(0.0.0.0,4),
+	             0px 18px 23px rgba(0.0.0.0,4);
+}
+
+.slideshow{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.slideshow li{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-repeat: no-repeat; 
+	background-position:  30% 50%;
+	background-size: cover; 
+	opacity: 0;
+	z-index: 0;
+	animation: imageAnimation 24s ease-in infinite;
+}
+
+.slideshow li:nth-child(1){
+	background-image: var(--linearGradient) ,  url(https://images.unsplash.com/photo-1500581276021-a4bbcd0050c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
+}
+
+.slideshow li:nth-child(2){
+	background-image: var(--linearGradient) , url(https://images.unsplash.com/photo-1487730116645-74489c95b41b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80);
+	animation-delay: 8s;
+
+}
+
+.slideshow li:nth-child(3){
+	background-image: var(--linearGradient) , url(https://images.unsplash.com/photo-1475564481606-0f9f5d97c047?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
+	background-position: bottom;
+	animation-delay: 12s;
+}
+
+.slideshow li:nth-child(4){
+	background-image: var(--linearGradient) ,  url(https://images.unsplash.com/photo-1504701365486-b44b67f99439?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1194&q=80);
+	background-position: bottom;
+	animation-delay: 16s;
+}
+
+.slideshow li:nth-child(5){
+	background-image: var(--linearGradient) , url(https://images.unsplash.com/photo-1492648272180-61e45a8d98a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
+	animation-delay: 20s;
+}
+
+@keyframes imageAnimation {
+	0%{
+		opacity: 0;
+		animation-timing-function: ease-in;
+	}
+	10%{
+		opacity: 1;
+		animation-timing-function: ease-out;
+	}
+	20%{
+		opacity: 1;
+	}
+	30%{
+		opacity: 0;
+	}
+}
+
+@media(max-width: 1000px){
+	.slideshow li:nth-child(1){
+		background-position: right;
+	}
+
+	#landing-header {
+		padding-top: 32vh;
+	}
+
+	#landing-header h1{
+		font-size: 3rem;
+
+	}
+
+	#landing-header a{
+		font-size: 1.2rem;
+	}
+
+}

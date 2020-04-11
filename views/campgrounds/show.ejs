@@ -1,0 +1,64 @@
+<%- include("../partials/header") %>
+	<div class="row">
+		<div class="col-md-9">
+			<div class="img-thumbnail card bg-dark p-3" style="color: #fff">
+				<h1><%= campground.name %></h1>
+				<img src="<%= campground.image %>" class="img-fluid my-3">
+				<div>
+					<p><%= campground.description%></p>
+					<p>
+						<em>By <%= campground.author.username %></em>
+					</p>
+					<%if(currentUser && campground.author.id.equals(currentUser._id)){%>
+						<a class="btn btn-warning btn-sm" href="/campgrounds/<%= campground._id %>/edit">Edit</a>
+						<form action="/campgrounds/<%=campground._id%>?_method=DELETE" method="POST" style='display: inline;'>
+							<input type="submit" value="DELETE" class="btn btn-danger btn-sm">
+						</form>	
+					<%}%>
+					<span class="float-right">10$/night</span>
+				</div>
+			</div>
+			<div class="my-5">
+				<div class="text-right">
+					<a class="btn btn-primary btn-sm my-3" href="/campgrounds/<%= campground._id %>/comments/new">Comment</a>
+				</div>
+				<%campground.comments.forEach((comment)=>{%>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="my-2 p-3 card bg-dark" style="color: #fff;">
+							<strong>
+								<%=comment.author.username%>
+							</strong>
+							<p class="p-0 m-0">
+								<%=comment.text%>
+								<span class="float-right">10 days ago</span>
+							</p>
+							<div class="float-left">
+							<%if(currentUser && comment.author.id.equals(currentUser._id)){%>
+								<a class="btn btn-link p-0" 
+									href="/campgrounds/<%= campground._id %>/comments/<%=comment._id%>/edit">Edit</a>
+								<form action="/campgrounds/<%=campground._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST" style='display: inline;'>
+									<input type="submit" value="Delete" class="btn btn-link">
+								</form>
+								<%}%>		
+							</div>
+						</div>
+					</div>
+				</div>
+		<%})%>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<p class="lead">YelpCamp</p>
+			<div class="list-group">
+				<li class="list-group-item">
+					<a href="/campgrounds/<%=campground._id%>">Overview</a>
+				</li>
+				<li class="list-group-item">
+					<a href="/location.ejs">Location</a>
+				</li>
+			</div>
+		</div>
+	</div>
+	
+<%- include("../partials/footer") %>

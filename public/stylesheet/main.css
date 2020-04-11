@@ -1,0 +1,30 @@
+/*dark grey #343a40*/
+div .img-fluid{
+	width: 100%;
+}
+
+.center{
+	text-align: center;
+}
+
+.centerForms{
+ 	width: 25vw; 
+ 	margin: 25px auto;
+}
+
+@media(max-width: 1000px){
+	#card{
+		margin: 0;
+
+	}
+
+	.centerForms{
+		width: 65vw;
+	}
+
+	.space{
+		margin: 1rem auto;
+	}
+
+
+}
