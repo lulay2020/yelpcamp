@@ -1,6 +1,6 @@
 
 <h1>Udemy project</h1>
-	<p>yelpCamp is a project from a udemy course <a href="https://www.udemy.com/course/the-web-developer-bootcamp/">the web developer bootcamp</a>by Colt Steele </p>
+	<p>yelpCamp is a project from a udemy course <a href="https://www.udemy.com/course/the-web-developer-bootcamp/">the web developer bootcamp </a>by Colt Steele </p>
 
 <h1>yelpCamp has:</h1>
 <ul>
