@@ -4,7 +4,7 @@
 
 <h1>yelpCamp has:</h1>
 <ul>
-	<li>Responsive web design</li>
+	<li>Responsive web design <a href="https://github.com/lulay2020/yelpcamp/blob/master/yelpcamp.jpg">click here to see !</a></li>
 	<li>User authentication & authorization</li>
 	<li>follows RESTful routes pattern</li>
 </ul>
