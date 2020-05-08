@@ -1,6 +1,6 @@
 let mongoose = require('mongoose'),
 	Campground = require('./models/campgrounds'),
-    User = require('../models/users'),
+    User = require('./models/users'),
 	Comment = require('./models/comments');
 
 
