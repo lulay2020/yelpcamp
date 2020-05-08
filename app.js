@@ -14,7 +14,6 @@ let dotenv = require('dotenv').config(),
 	mongoose = require('mongoose'),
 	seedDB = require('./seeds');
 
-seedDB();
 //requiring routes
 let commentRoutes = require('./routes/comments'),
 	campgroundRoutes = require('./routes/campgrounds'),
