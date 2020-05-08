@@ -1,5 +1,6 @@
 let mongoose = require('mongoose'),
 	Campground = require('./models/campgrounds'),
+    User = require('../models/users'),
 	Comment = require('./models/comments');
 
 
@@ -13,11 +14,12 @@ let commentsData =
 function seedDB(){
    //Remove all campgrounds
    Campground.deleteMany({}, (err)=>{
+    User.deleteMany({}, (err)=>{});
         // if(err){
         //     console.log(err);
         // }
         // console.log("removed campgrounds!");
-        // Comment.deleteMany({}, (err)=> {
+        Comment.deleteMany({}, (err)=> {})
         //     if(err){
         //         console.log(err);
         //     }
