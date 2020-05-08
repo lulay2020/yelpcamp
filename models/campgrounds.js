@@ -4,7 +4,12 @@ const	mongoose = require('mongoose'),
 const	campgroundSchema = new mongoose.Schema({ 
 		name: String, 
 		image: String, 
+		imageId: String,
+		location: String,
+		lat: Number,
+		lng: Number, 
 		description: String,
+		createdAt: {type: Date, default: Date.now},
 		comments: [
 			{
 				type: mongoose.Schema.Types.ObjectId,

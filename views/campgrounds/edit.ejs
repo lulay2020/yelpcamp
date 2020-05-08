@@ -2,22 +2,24 @@
 	<div class="jumbotron">
 		<h1 class="center">Edit <%=campground.name%></h1>
 		<div class="centerForms">
-			<form method="POST" action="/campgrounds/<%=campground._id %>?_method=PUT">
+			<form method="POST" action="/campgrounds/<%=campground._id %>?_method=PUT" enctype="multipart/form-data">
 				<div class="form-group">
-					<input class='form-control' type='text' value='<%=campground.name%>' name='campground[name]'>
+				    <label for="name">Campground name</label>
+					<input class='form-control' id="name"> type='text' value='<%=campground.name%>' name='name'>
 				</div>
 				<div class="form-group">
-					<input class='form-control' type='text' value='<%=campground.image%>' name='campground[image]'>
+					<label for="image">Image</label>
+					<input class='form-control' type='file' id="image" accept="image/*" placeholder='Add image URL' name='image'>
 				</div>
 				<div class="form-group">
-					<textarea class='form-control' type='text' name='campground[description]'><%=campground.description%></textarea>
+				    <label for="description">Description</label>
+					<textarea class='form-control' id="description" type='text' name='description'><%=campground.description%></textarea>
 				</div>
 				<div class="form-group">
 					<button class='btn btn-primary btn-block'>Submit</button>
 				</div>	
 			</form>	
-		</div>
-			
+		</div>	
 	</div>
 
 <%- include('../partials/footer')%>
